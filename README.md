@@ -1,0 +1,2 @@
+# vendor-libxslt
+libxslt
