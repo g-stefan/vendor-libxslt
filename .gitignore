@@ -49,6 +49,8 @@
 *.o2elf
 *.config.md5
 /bin/
-/build/
+/include/
 /lib/
-/libxslt-1.1.34/
+/source/
+/build/
+/release/
