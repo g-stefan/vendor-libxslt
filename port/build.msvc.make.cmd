@@ -18,9 +18,9 @@ echo "Error: %ACTION%"
 exit 1
 :cmdXDefined
 
-call :cmdX xyo-cc --mode=%ACTION% --source-has-archive libxslt
-
 if not "%ACTION%" == "make" goto :eof
+
+call :cmdX xyo-cc --mode=%ACTION% --source-has-archive libxslt
 
 if not exist build\ mkdir build
 
@@ -28,6 +28,8 @@ set INCLUDE=%XYO_PATH_REPOSITORY%\include;%INCLUDE%
 set LIB=%XYO_PATH_REPOSITORY%\lib;%LIB%
 set WORKSPACE_PATH=%CD%
 set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\build
+
+if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
 
 pushd "source\win32"
 
@@ -53,6 +55,8 @@ nmake /f Makefile.msvc
 if errorlevel 1 goto makeError
 nmake /f Makefile.msvc install
 if errorlevel 1 goto makeError
+nmake /f Makefile.msvc clean
+if errorlevel 1 goto makeError
 
 goto buildDone
 
@@ -63,4 +67,4 @@ exit 1
 
 :buildDone
 popd
-
+echo done > %WORKSPACE_PATH_BUILD%\build.done.flag

@@ -3,7 +3,7 @@ rem Public domain
 rem http://unlicense.org/
 rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
-echo -^> local-release libxslt
+echo -^> local-release vendor-libxslt
 
 goto cmdXDefined
 :cmdX
