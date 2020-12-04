@@ -5,7 +5,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-echo -^> git-release vendor-libxslt
+echo -^> github-release vendor-libxslt
 
 if not exist release\ echo Error - no release & exit 1
 

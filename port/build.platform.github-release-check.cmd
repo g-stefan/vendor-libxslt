@@ -5,7 +5,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-echo -^> git-release-check vendor-libxslt
+echo -^> github-release-check vendor-libxslt
 
 set PROJECT=vendor-libxslt
 SET PROJECT_VENDOR=%PROJECT:vendor-=%
