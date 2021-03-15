@@ -22,12 +22,12 @@ if not "%ACTION%" == "make" goto :eof
 
 call :cmdX xyo-cc --mode=%ACTION% --source-has-archive libxslt
 
-if not exist build\ mkdir build
+if not exist temp\ mkdir temp
 
 set INCLUDE=%XYO_PATH_REPOSITORY%\include;%INCLUDE%
 set LIB=%XYO_PATH_REPOSITORY%\lib;%LIB%
 set WORKSPACE_PATH=%CD%
-set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\build
+set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\temp
 
 if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
 
@@ -48,7 +48,7 @@ SET CMD_CONFIG=%CMD_CONFIG% sodir=%WORKSPACE_PATH_BUILD%\bin
 
 if not exist %WORKSPACE_PATH_BUILD%\build.configured.flag %CMD_CONFIG%
 if errorlevel 1 goto makeError
-if not exist %WORKSPACE_PATH_BUILD%\build.configured.flag copy /Y /B %WORKSPACE_PATH%\util\xsltconfig.h %WORKSPACE_PATH%\source\libxslt\xsltconfig.h
+if not exist %WORKSPACE_PATH_BUILD%\build.configured.flag copy /Y /B %WORKSPACE_PATH%\build\source\xsltconfig.h %WORKSPACE_PATH%\source\libxslt\xsltconfig.h
 if not exist %WORKSPACE_PATH_BUILD%\build.configured.flag echo configured > %WORKSPACE_PATH_BUILD%\build.configured.flag
 
 nmake /f Makefile.msvc

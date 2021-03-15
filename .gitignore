@@ -48,9 +48,9 @@
 *.o2so
 *.o2elf
 *.config.md5
-/bin/
-/include/
-/lib/
-/source/
-/build/
+
+# Development
+/output/
+/temp/
 /release/
+/source/

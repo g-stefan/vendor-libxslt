@@ -11,4 +11,4 @@ set INSTALL_PATH_DEV=%INSTALL_PATH%
 
 rem // ---
 
-call port\build.msvc.install.sub.cmd
+call build\msvc.install.sub.cmd

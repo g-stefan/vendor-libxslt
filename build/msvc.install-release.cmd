@@ -8,7 +8,7 @@ echo -^> install-release vendor-libxslt
 set PROJECT=libxslt
 
 SETLOCAL ENABLEDELAYEDEXPANSION
-FOR /F "tokens=* USEBACKQ" %%F IN (`xyo-version --no-bump --get "--version-file=%PROJECT%.version.ini" %PROJECT%`) DO (
+FOR /F "tokens=* USEBACKQ" %%F IN (`xyo-version --no-bump --get "--version-file=version.ini" %PROJECT%`) DO (
 	SET VERSION=%%F
 )
 
@@ -18,4 +18,4 @@ set INSTALL_PATH_DEV=%XYO_PATH_RELEASE%\%PROJECT%-%VERSION%-%XYO_PLATFORM%-dev
 
 rem // ---
 
-call port\build.msvc.install.sub.cmd
+call build\msvc.install.sub.cmd

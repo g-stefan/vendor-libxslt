@@ -17,8 +17,8 @@ exit 1
 
 set XYO_PATH_RELEASE=release
 
-call :cmdX cmd.exe /C port\build.msvc.cmd make
-call :cmdX cmd.exe /C port\build.msvc.cmd sign
-call :cmdX cmd.exe /C port\build.msvc.cmd install
-call :cmdX cmd.exe /C port\build.msvc.cmd install-release
-call :cmdX xyo-cc libxslt --archive-release-sha512 --version-file=libxslt.version.ini
+call :cmdX cmd.exe /C build\msvc.cmd make
+call :cmdX cmd.exe /C build\msvc.cmd sign
+call :cmdX cmd.exe /C build\msvc.cmd install
+call :cmdX cmd.exe /C build\msvc.cmd install-release
+call :cmdX xyo-cc libxslt --archive-release-sha512 --version-file=version.ini
