@@ -22,11 +22,13 @@ if not "%ACTION%" == "make" goto :eof
 
 call :cmdX xyo-cc --mode=%ACTION% --source-has-archive libxslt
 
+if not exist output\ mkdir output
 if not exist temp\ mkdir temp
 
 set INCLUDE=%XYO_PATH_REPOSITORY%\include;%INCLUDE%
 set LIB=%XYO_PATH_REPOSITORY%\lib;%LIB%
 set WORKSPACE_PATH=%CD%
+set WORKSPACE_PATH_OUTPUT=%WORKSPACE_PATH%\output
 set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\temp
 
 if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
@@ -41,10 +43,10 @@ SET CMD_CONFIG=%CMD_CONFIG% debug=no
 SET CMD_CONFIG=%CMD_CONFIG% static=no
 SET CMD_CONFIG=%CMD_CONFIG% debugger=no
 SET CMD_CONFIG=%CMD_CONFIG% xslt_debug=yes
-SET CMD_CONFIG=%CMD_CONFIG% bindir=%WORKSPACE_PATH_BUILD%\bin
-SET CMD_CONFIG=%CMD_CONFIG% incdir=%WORKSPACE_PATH_BUILD%\include
-SET CMD_CONFIG=%CMD_CONFIG% libdir=%WORKSPACE_PATH_BUILD%\lib
-SET CMD_CONFIG=%CMD_CONFIG% sodir=%WORKSPACE_PATH_BUILD%\bin
+SET CMD_CONFIG=%CMD_CONFIG% bindir=%WORKSPACE_PATH_OUTPUT%\bin
+SET CMD_CONFIG=%CMD_CONFIG% incdir=%WORKSPACE_PATH_OUTPUT%\include
+SET CMD_CONFIG=%CMD_CONFIG% libdir=%WORKSPACE_PATH_OUTPUT%\lib
+SET CMD_CONFIG=%CMD_CONFIG% sodir=%WORKSPACE_PATH_OUTPUT%\bin
 
 if not exist %WORKSPACE_PATH_BUILD%\build.configured.flag %CMD_CONFIG%
 if errorlevel 1 goto makeError
