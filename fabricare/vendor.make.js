@@ -50,4 +50,6 @@ runInPath("source\\win32",function(){
 	exitIf(Shell.system("nmake /f Makefile.msvc clean"));
 });
 
+exitIf(!Shell.copyFile("output/lib/libxslt_a.lib", "output/lib/libxslt.static.lib"));
+
 Shell.filePutContents("temp/build.done.flag", "done");
