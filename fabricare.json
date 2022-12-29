@@ -4,6 +4,9 @@
 		"type" : "xyo-cpp",
 		"SPDX-License-Identifier": "MIT",
 		"sourceLink" : "https://gitlab.gnome.org/GNOME/libxslt/-/releases",
-		"version" : "1.1.35"
+		"version" : "1.1.37",
+		"hasRelease" : true,
+		"noVersion" : true,
+		"githubRelease" : true
 	}
 }
