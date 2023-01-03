@@ -1,13 +1,18 @@
 {
-	"project": {
-		"name" : "libxslt",
+	"solution": {
+		"name" : "vendor-libxslt",
 		"type" : "xyo-cpp",
-		"SPDX-License-Identifier": "MIT",
-		"sourceLink" : "https://gitlab.gnome.org/GNOME/libxslt/-/releases",
-		"version" : "1.1.37",
-		"hasRelease" : true,
-		"noVersion" : true,
-		"githubRelease" : true,
-		"githubRepository" : "vendor-libxslt"
+		"projects": [
+			{
+				"name" : "libxslt",
+				"SPDX-License-Identifier": "MIT",
+				"sourceLink" : "https://gitlab.gnome.org/GNOME/libxslt/-/releases",
+				"version" : "1.1.37",
+				"noVersion" : true
+			}
+		],
+		"releaseName" : "libxslt",
+		"hasGithub" : true
 	}
 }
+
