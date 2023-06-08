@@ -11,8 +11,7 @@
 				"noVersion" : true
 			}
 		],
-		"releaseName" : "libxslt",
-		"hasGithub" : true
+		"releaseName" : "libxslt"
 	}
 }
 
