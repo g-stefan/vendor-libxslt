@@ -1,6 +1,5 @@
 {
 	"solution": {
-		"namespace" : "xyo",
 		"name" : "vendor-libxslt",
 		"type" : "xyo-cpp",
 		"projects": [
